@@ -1,0 +1,6 @@
+function solution(arr) {
+    let count = Number(arr[0]);
+    for (let i = count; i >= 1; i--) {
+        console.log(i);
+    }
+}

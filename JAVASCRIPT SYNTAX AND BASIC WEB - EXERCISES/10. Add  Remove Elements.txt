@@ -1,0 +1,33 @@
+function solution(arr) {
+    function shift(numbers, pos) {
+        for (let i = pos; i < numbers.length - 1; i++) {
+            let swap = numbers[i];
+            numbers[i] = numbers[i + 1];
+            numbers[i + 1] = swap;
+        }
+    }
+    let numbers = [];
+    for (let i = 0; i < arr.length; i++) {
+        let infoAboutInput = arr[i].split(' ');
+        let command = infoAboutInput[0];
+        switch (command) {
+            case "add": {
+                let num = Number(infoAboutInput[1]);
+                numbers.push(num);
+                break;
+            }
+            case "remove": {
+                let pos = Number(infoAboutInput[1]);
+                if (pos < 0 || pos >= numbers.length) {
+                    continue;
+                }
+                shift(numbers, pos);
+                numbers.pop();
+                break;
+            }
+        }
+    }
+    for (let i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);
+    }
+}

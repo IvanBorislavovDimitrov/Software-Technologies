@@ -1,0 +1,17 @@
+function solution(arr) {
+    let keyPairValues = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+        let infoAboutInput = arr[i].split(' ');
+        let key = infoAboutInput[0];
+        let value = infoAboutInput[1];
+
+        keyPairValues[key] = value;
+    }
+    let lastKey = arr[arr.length - 1];
+    if (keyPairValues[lastKey]) {
+        console.log(keyPairValues[lastKey]);
+    }
+    else {
+        console.log("None");
+    }
+}

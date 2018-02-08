@@ -1,0 +1,8 @@
+function solution(arr) {
+    let participants = arr.map(JSON.parse);
+    for (let participant of participants) {
+        console.log(`Name: ${participant.name}`);
+        console.log(`Age: ${participant.age}`);
+        console.log(`Date: ${participant.date}`);
+    }
+}

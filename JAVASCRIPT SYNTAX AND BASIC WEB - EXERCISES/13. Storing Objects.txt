@@ -1,0 +1,16 @@
+function solution(arr) {
+    let students = [];
+    for (let i = 0; i < arr.length; i++) {
+        let infoAboutStudent = arr[i].split(' -> ');
+        let studentName = infoAboutStudent[0];
+        let studentAge = infoAboutStudent[1];
+        let studentGrade = infoAboutStudent[2];
+
+        students.push({Name: studentName, Age: studentAge, Grade: studentGrade});
+    }
+    for (let student of students) {
+        console.log(`Name: ${student.Name}`);
+        console.log(`Age: ${student.Age}`);
+        console.log(`Grade: ${student.Grade}`);
+    }
+}

@@ -1,0 +1,14 @@
+function solution(arr) {
+    let props = {};
+    for (let i = 0; i < arr.length; i++) {
+        let inputInfo = arr[i].split(' -> ');
+        if (Number(inputInfo[1])) {
+            props[inputInfo[0]] = Number(inputInfo[1]);
+        }
+        else {
+            props[inputInfo[0]] = inputInfo[1];
+        }
+    }
+    let jsonObj = JSON.stringify(props);
+    console.log(jsonObj);
+}

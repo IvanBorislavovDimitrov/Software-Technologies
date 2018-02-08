@@ -1,0 +1,14 @@
+function solution(arr) {
+    let count = Number(arr[0]);
+    let numbers = [];
+    for (let i = 0; i < count; i++) {
+        numbers.push(0);
+    }
+    for (let i = 1; i < arr.length; i++) {
+        let infoAboutInput = arr[i].split(' - ');
+        let pos = Number(infoAboutInput[0]);
+        let num = Number(infoAboutInput[1]);
+        numbers[pos] = num;
+    }
+    console.log(numbers.join('\n'));
+}

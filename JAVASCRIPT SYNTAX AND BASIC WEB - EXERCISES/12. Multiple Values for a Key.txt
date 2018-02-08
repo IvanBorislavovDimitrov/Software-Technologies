@@ -1,0 +1,24 @@
+function solution(arr) {
+    let keyPairValues = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+        let infoAboutInput = arr[i].split(' ');
+        let key = infoAboutInput[0];
+        let value = infoAboutInput[1];
+        if (keyPairValues[key]) {
+            keyPairValues[key].push(value);
+        }
+        else {
+            keyPairValues[key] = [];
+            keyPairValues[key].push(value);
+        }
+    }
+    let lastKey = arr[arr.length - 1];
+    if (keyPairValues[lastKey]) {
+        for (let item of keyPairValues[lastKey]) {
+            console.log(item);
+        }
+    }
+    else {
+        console.log("None");
+    }
+}
